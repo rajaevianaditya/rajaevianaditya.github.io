@@ -149,7 +149,7 @@
             left: 100%;
         }
 
-        .about {
+        section {
             padding: 100px 0;
             position: relative;
         }
@@ -278,6 +278,112 @@
             filter: blur(20px);
         }
 
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+            border-color: rgba(0, 247, 255, 0.5);
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .project-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        .project-description {
+            color: rgba(240, 248, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tech-tag {
+            background: rgba(0, 247, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(0, 247, 255, 0.1);
+            color: var(--light);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 247, 255, 0.3);
+        }
+
+        .project-link:hover {
+            background: rgba(0, 247, 255, 0.2);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .project-link i {
+            font-size: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
         footer {
             padding: 50px 0;
             text-align: center;
@@ -329,6 +435,10 @@
             .glow-circle {
                 width: 300px;
                 height: 300px;
+            }
+
+            .button-group {
+                flex-direction: column;
             }
         }
 
@@ -438,8 +548,11 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title glitch-effect" data-text="RajaEvianAditya">RajaEvianAditya</h1>
-                <p class="hero-subtitle">Siswa di SMK Muhammadiyah 10 Kisaran - TKJ</p>
-                <a href="#about" class="btn">Jelajahi</a>
+                <p class="hero-subtitle">Siswa di SMK Muhammadiyah 10 Kisaran - TKJ | Web Developer | Minecraft Server Developer</p>
+                <div class="button-group">
+                    <a href="#about" class="btn">Tentang</a>
+                    <a href="#projects" class="btn">Projek</a>
+                </div>
             </div>
         </div>
         <div class="floating-elements" id="floatingElements"></div>
@@ -450,8 +563,8 @@
             <h2 class="section-title">Tentang Saya</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Halo! Saya Raja, seorang siswa yang lahir pada 21 Juni 2010. Saat ini saya bersekolah di SMK Muhammadiyah 10 Kisaran Dan Mengambil jurusan Teknik Komputer Jaringan, dimana saya akan mengembangkan keterampilan dan pengetahuan untuk masa depan.</p>
-                    <p>Saya sangat tertarik dengan teknologi dan selalu bersemangat untuk mempelajari hal-hal baru.</p>
+                    <p>Halo! Saya Raja, seorang siswa yang lahir pada 21 Juni 2010. Saat ini saya bersekolah di SMK Muhammadiyah 10 Kisaran dan mengambil jurusan Teknik Komputer Jaringan, dimana saya mengembangkan keterampilan dan pengetahuan untuk masa depan.</p>
+                    <p>Saya sangat tertarik dengan teknologi dan selalu bersemangat untuk mempelajari hal-hal baru. Saya memiliki passion di bidang pengembangan web dan game, yang saya wujudkan melalui berbagai proyek kreatif.</p>
                     
                     <div class="info-item">
                         <i class="fas fa-user"></i>
@@ -486,6 +599,57 @@
                 <div class="about-image">
                     <div class="glow-circle"></div>
                     <img src="foto/1.jpg" alt="Raja Evian Aditya" class="avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Proyek Saya</h2>
+            <div class="projects-container">
+                <!-- Web Development Project -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Bakwan Jagung Website</h3>
+                        <p class="project-description">
+                            Sebuah website profesional untuk Server Bakwan Jagung dengan desain modern dan fitur responsif.
+                            Dibangun dengan teknologi terbaru untuk pengalaman pengguna yang optimal.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Official Project</span>
+                            <span class="tech-tag">Store</span>
+                            <span class="tech-tag">Vote</span>
+                            <span class="tech-tag">Rules</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://web.bakwanjagung.my.id/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Kunjungi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minecraft Server Project -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Bakwan Jagung Minecraft Server</h3>
+                        <p class="project-description">
+                            Server Minecraft komunitas dengan berbagai fitur custom dan modifikasi unik.
+                            Menyediakan pengalaman bermain yang menyenangkan dan komunitas yang aktif.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Minecraft</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Plugins</span>
+                            <span class="tech-tag">Server Management</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://web.bakwanjagung.my.id/#connect" class="project-link">
+                                <i class="fas fa-server"></i> Server Info
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -593,7 +757,7 @@
             }
         }, 5000);
         
-        // Enhanced scroll animation for "Jelajahi Lebih" button
+        // Enhanced scroll animation for buttons
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
